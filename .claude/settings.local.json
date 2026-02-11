@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__stitch__create_project",
+      "mcp__stitch__generate_screen_from_text",
+      "mcp__stitch__list_screens",
+      "mcp__stitch__get_project",
+      "mcp__stitch__list_projects",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "WebFetch(domain:localhost)",
+      "Bash(curl:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npx --yes playwright screenshot:*)",
+      "Bash(npx playwright install:*)",
+      "Bash(npx playwright screenshot:*)",
+      "Bash(node -e:*)",
+      "Bash(npx playwright evaluate:*)",
+      "Bash(npx playwright:*)"
+    ]
+  }
+}
