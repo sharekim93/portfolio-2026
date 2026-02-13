@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { ArrowUp, Menu, X } from "lucide-react";
+import { ArrowUp, Phone } from "lucide-react";
 
 const navItems = [
   { label: "프로젝트", href: "#projects" },
@@ -10,7 +9,6 @@ const navItems = [
 ];
 
 export function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav
@@ -23,7 +21,7 @@ export function Navbar() {
           href="#hero"
           className="font-heading font-extrabold text-lg tracking-tight text-primary"
         >
-          나눔<span className="text-accent">.</span>dev
+          Developer <span className="text-accent">Share Kim</span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -38,38 +36,23 @@ export function Navbar() {
           ))}
         </div>
 
-        <a
-          href="#contact"
-          className="hidden sm:inline-flex items-center gap-2 bg-primary text-white text-sm font-medium px-4 py-2 rounded-xl hover:bg-accent transition-colors duration-200"
-        >
-          연락하기
-          <ArrowUp size={16} />
-        </a>
-
-        <button
-          className="md:hidden p-2"
-          aria-label="메뉴 열기/닫기"
-          aria-expanded={menuOpen}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          {menuOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </div>
-
-      {menuOpen && (
-        <div className="md:hidden mt-2 bg-white/80 backdrop-blur-xl border border-gray-200 rounded-2xl px-4 py-4 shadow-sm">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="block py-2 text-sm font-medium text-secondary hover:text-primary transition-colors duration-200"
-              onClick={() => setMenuOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
+        <div className="flex items-center gap-2">
+          <a
+            href="tel:010-9887-6284"
+            className="inline-flex items-center justify-center w-9 h-9 bg-green-500 text-white rounded-xl hover:bg-green-600 transition-colors duration-200"
+            aria-label="전화 걸기"
+          >
+            <Phone size={18} />
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 bg-primary text-white text-sm font-medium px-4 py-2 rounded-xl hover:bg-accent transition-colors duration-200"
+          >
+            연락하기
+            <ArrowUp size={16} />
+          </a>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
