@@ -8,16 +8,16 @@ import {
 } from "@react-pdf/renderer";
 import { resume, projects, experience, skills } from "@/lib/data";
 
-// Register fonts (using CDN Noto Sans KR)
+// Register fonts (using Google Fonts CDN - Early Access)
 Font.register({
   family: "NotoSansKR",
   fonts: [
     {
-      src: "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/Pretendard-Regular.woff",
+      src: "https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2",
       fontWeight: 400,
     },
     {
-      src: "https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/Pretendard-Bold.woff",
+      src: "https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Bold.woff2",
       fontWeight: 700,
     },
   ],
