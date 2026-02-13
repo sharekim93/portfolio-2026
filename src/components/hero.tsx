@@ -11,15 +11,23 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
             <Reveal>
-              <span className="inline-block bg-accent/10 text-accent text-sm font-medium px-3 py-1 rounded-full mb-6">
-                채용 가능
-              </span>
+              <div className="flex flex-wrap gap-2 mb-6">
+                <span className="inline-block bg-blue-500/10 text-blue-600 text-sm font-medium px-3 py-1 rounded-full">
+                  Frontend
+                </span>
+                <span className="inline-block bg-green-500/10 text-green-600 text-sm font-medium px-3 py-1 rounded-full">
+                  Backend
+                </span>
+                <span className="inline-block bg-purple-500/10 text-purple-600 text-sm font-medium px-3 py-1 rounded-full">
+                  Prompt Engineering
+                </span>
+              </div>
             </Reveal>
             <Reveal>
-              <h1 className="font-heading font-black text-5xl sm:text-6xl lg:text-7xl leading-[0.95] tracking-tight text-primary mb-6">
+              <h1 className="font-heading font-black text-5xl sm:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-primary mb-6">
                 더 나은
                 <br />
-                <span className="text-accent">웹 경험</span>을
+                <span className="text-accent">비즈니스 경험</span>을
                 <br />
                 만듭니다
               </h1>
