@@ -17,7 +17,8 @@
       "Bash(npx playwright screenshot:*)",
       "Bash(node -e:*)",
       "Bash(npx playwright evaluate:*)",
-      "Bash(npx playwright:*)"
+      "Bash(npx playwright:*)",
+      "WebFetch(domain:sharekim.site)"
     ]
   }
 }
