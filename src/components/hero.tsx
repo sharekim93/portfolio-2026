@@ -1,5 +1,7 @@
 import { ArrowUpRight, ChevronDown } from "lucide-react";
 import { Reveal } from "./reveal";
+import { DownloadResumeButton } from "./download-resume-button";
+import { CodeAnimation } from "./code-animation";
 
 export function Hero() {
   return (
@@ -53,74 +55,13 @@ export function Hero() {
                 >
                   연락하기
                 </a>
+                <DownloadResumeButton />
               </div>
             </Reveal>
           </div>
 
           <Reveal className="hidden lg:block">
-            <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-br from-accent/5 to-transparent rounded-3xl" />
-              <div className="relative bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="w-3 h-3 rounded-full bg-red-400" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-400" />
-                  <div className="w-3 h-3 rounded-full bg-green-400" />
-                  <span className="ml-2 text-xs text-gray-400 font-mono">
-                    portfolio.tsx
-                  </span>
-                </div>
-                <pre className="text-sm font-mono leading-relaxed text-secondary">
-                  <code>
-                    <span className="text-accent">const</span>
-                    {" developer = {\n"}
-                    {"  name: "}
-                    <span className="text-green-600">
-                      &quot;김나눔&quot;
-                    </span>
-                    {",\n"}
-                    {"  role: "}
-                    <span className="text-green-600">
-                      &quot;웹 개발자&quot;
-                    </span>
-                    {",\n"}
-                    {"  skills: [\n"}
-                    {"    "}
-                    <span className="text-green-600">
-                      &quot;React&quot;
-                    </span>
-                    {", "}
-                    <span className="text-green-600">
-                      &quot;Next.js&quot;
-                    </span>
-                    {",\n"}
-                    {"    "}
-                    <span className="text-green-600">
-                      &quot;TypeScript&quot;
-                    </span>
-                    {", "}
-                    <span className="text-green-600">
-                      &quot;Spring&quot;
-                    </span>
-                    {",\n"}
-                    {"    "}
-                    <span className="text-green-600">
-                      &quot;React Native&quot;
-                    </span>
-                    {", "}
-                    <span className="text-green-600">
-                      &quot;Java&quot;
-                    </span>
-                    {"\n"}
-                    {"  ],\n"}
-                    {"  passion: "}
-                    <span className="text-green-600">
-                      &quot;고객 만족 서비스&quot;
-                    </span>
-                    {"\n};"}
-                  </code>
-                </pre>
-              </div>
-            </div>
+            <CodeAnimation />
           </Reveal>
         </div>
 
