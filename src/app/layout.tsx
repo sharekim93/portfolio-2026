@@ -19,6 +19,11 @@ export const metadata: Metadata = {
   title: `${siteConfig.name} — 웹 개발자`,
   description: siteConfig.description,
   metadataBase: new URL(siteConfig.url),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon", sizes: "256x256" },
+    ],
+  },
   alternates: {
     canonical: "/",
   },
