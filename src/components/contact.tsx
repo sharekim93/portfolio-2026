@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Github } from "lucide-react";
+import Image from "next/image";
 import { Reveal } from "./reveal";
 import { contactLinks } from "@/lib/data";
 
 const iconMap = {
   mail: Mail,
   github: Github,
-  linkedin: Linkedin,
 } as const;
 
 export function Contact() {
@@ -76,14 +76,26 @@ export function Contact() {
             <Reveal>
               <div className="space-y-4">
                 {contactLinks.map((link) => {
-                  const Icon = iconMap[link.icon];
+                  const Icon = iconMap[link.icon as keyof typeof iconMap];
                   return (
                     <a
                       key={link.label}
                       href={link.href}
                       className="flex items-center gap-3 text-secondary hover:text-accent transition-colors duration-200"
+                      target={link.icon !== "mail" ? "_blank" : undefined}
+                      rel={link.icon !== "mail" ? "noopener noreferrer" : undefined}
                     >
-                      <Icon size={20} />
+                      {Icon ? (
+                        <Icon size={20} />
+                      ) : link.icon === "tistory" ? (
+                        <Image
+                          src="/icons/tistory.svg"
+                          alt="Tistory"
+                          width={20}
+                          height={20}
+                          className="w-5 h-5"
+                        />
+                      ) : null}
                       {link.label}
                     </a>
                   );

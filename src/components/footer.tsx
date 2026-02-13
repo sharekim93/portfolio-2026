@@ -1,9 +1,9 @@
-import { Github, Linkedin } from "lucide-react";
+import { Github } from "lucide-react";
+import Image from "next/image";
 import { socialLinks } from "@/lib/data";
 
 const iconMap = {
   github: Github,
-  linkedin: Linkedin,
 } as const;
 
 export function Footer() {
@@ -16,15 +16,26 @@ export function Footer() {
         <div className="flex items-center gap-6">
           {socialLinks.map((link) => {
             const Icon = iconMap[link.icon as keyof typeof iconMap];
-            if (!Icon) return null;
             return (
               <a
                 key={link.label}
                 href={link.href}
                 className="text-secondary hover:text-accent transition-colors duration-200"
                 aria-label={link.label}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <Icon size={18} />
+                {Icon ? (
+                  <Icon size={18} />
+                ) : link.icon === "tistory" ? (
+                  <Image
+                    src="/icons/tistory.svg"
+                    alt="Tistory"
+                    width={18}
+                    height={18}
+                    className="w-[18px] h-[18px]"
+                  />
+                ) : null}
               </a>
             );
           })}

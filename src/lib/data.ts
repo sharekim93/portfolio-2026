@@ -22,13 +22,13 @@ export interface Experience {
 export interface SocialLink {
   label: string;
   href: string;
-  icon: "github" | "linkedin" | "twitter";
+  icon: "github" | "tistory" | "twitter";
 }
 
 export interface ContactLink {
   label: string;
   href: string;
-  icon: "mail" | "github" | "linkedin";
+  icon: "mail" | "github" | "tistory";
 }
 
 export const siteConfig = {
@@ -172,24 +172,39 @@ export const experience: Experience[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { label: "GitHub", href: "#", icon: "github" },
-  { label: "LinkedIn", href: "#", icon: "linkedin" },
+  { label: "GitHub", href: "https://github.com/sharekim93", icon: "github" },
+  { label: "Tistory", href: "https://sharekim-dev.tistory.com/", icon: "tistory" },
 ];
 
 export const contactLinks: ContactLink[] = [
   {
-    label: "hello@nanum.dev",
-    href: "mailto:hello@nanum.dev",
+    label: "sksyag@naver.com",
+    href: "mailto:sksyag@naver.com",
     icon: "mail",
   },
   {
-    label: "github.com/nanum",
-    href: "#",
+    label: "github.com/sharekim93",
+    href: "https://github.com/sharekim93",
     icon: "github",
   },
   {
-    label: "linkedin.com/in/nanum",
-    href: "#",
-    icon: "linkedin",
+    label: "sharekim-dev.tistory.com",
+    href: "https://sharekim-dev.tistory.com/",
+    icon: "tistory",
   },
 ];
+
+export const resume = {
+  personalInfo: {
+    name: "김나눔",
+    title: "웹 개발자",
+    subtitle: "Frontend • Backend • Prompt Engineering",
+    email: "sksyag@naver.com",
+    phone: "010-9887-6284",
+    website: "sharekim.site",
+    github: "github.com/sharekim93",
+    tistory: "sharekim-dev.tistory.com",
+  },
+  summary:
+    "IT 영업부터 서비스 운영, 글로벌 프린터 기업, 상품화 플랫폼까지 — 고객 경험을 아는 개발자가 만족할 서비스를 만듭니다.",
+};
