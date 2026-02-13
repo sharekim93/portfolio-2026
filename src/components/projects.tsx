@@ -1,6 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "./reveal";
 import { projects } from "@/lib/data";
+import Image from "next/image";
 
 export function Projects() {
   const featured = projects.find((p) => p.featured);
@@ -24,29 +25,38 @@ export function Projects() {
               <div className="group block bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-accent/30 hover:shadow-lg transition-all duration-300">
                 <div className="grid md:grid-cols-2 gap-0">
                   <div
-                    className={`bg-gradient-to-br ${featured.gradient} p-8 sm:p-12 flex items-center justify-center min-h-[280px]`}
+                    className={`bg-gradient-to-br ${featured.gradient} p-8 sm:p-12 flex items-center justify-center min-h-[280px] relative overflow-hidden`}
                   >
-                    <div className="text-center">
-                      <div className="w-20 h-20 bg-white/80 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
-                        <span className="font-heading font-black text-3xl text-accent">
-                          {featured.company[0]}
-                        </span>
+                    {featured.image ? (
+                      <Image
+                        src={featured.image}
+                        alt={featured.title}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <div className="text-center">
+                        <div className="w-20 h-20 bg-white/80 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-sm">
+                          <span className="font-heading font-black text-3xl text-accent">
+                            {featured.company[0]}
+                          </span>
+                        </div>
+                        <p className="text-sm font-medium text-secondary/70">
+                          {featured.company}
+                        </p>
                       </div>
-                      <p className="text-sm font-medium text-secondary/70">
-                        {featured.company}
-                      </p>
-                      <p className="text-xs text-secondary/50 mt-1">
-                        {featured.period}
-                      </p>
-                    </div>
+                    )}
                   </div>
                   <div className="p-8 sm:p-12 flex flex-col justify-center">
                     <span className="text-accent text-xs font-medium uppercase tracking-widest mb-3">
                       {featured.label}
                     </span>
-                    <h3 className="font-heading font-bold text-2xl sm:text-3xl text-primary mb-3">
+                    <h3 className="font-heading font-bold text-2xl sm:text-3xl text-primary mb-2">
                       {featured.title}
                     </h3>
+                    <p className="text-xs text-secondary/60 mb-3">
+                      {featured.period}
+                    </p>
                     <p className="text-secondary leading-relaxed mb-4">
                       {featured.description}
                     </p>
@@ -83,26 +93,35 @@ export function Projects() {
             <Reveal key={project.title} delay={i * 100}>
               <div className="group block bg-white border border-gray-200 rounded-2xl overflow-hidden hover:border-accent/30 hover:shadow-lg transition-all duration-300 h-full">
                 <div
-                  className={`bg-gradient-to-br ${project.gradient} p-8 flex items-center justify-center min-h-[180px]`}
+                  className={`bg-gradient-to-br ${project.gradient} p-8 flex items-center justify-center min-h-[180px] relative overflow-hidden`}
                 >
-                  <div className="text-center">
-                    <div className="w-14 h-14 bg-white/80 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-sm">
-                      <span className="font-heading font-black text-xl text-primary/70">
-                        {project.company[0]}
-                      </span>
+                  {project.image ? (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                    />
+                  ) : (
+                    <div className="text-center">
+                      <div className="w-14 h-14 bg-white/80 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-sm">
+                        <span className="font-heading font-black text-xl text-primary/70">
+                          {project.company[0]}
+                        </span>
+                      </div>
+                      <p className="text-xs font-medium text-secondary/60">
+                        {project.company}
+                      </p>
                     </div>
-                    <p className="text-xs font-medium text-secondary/60">
-                      {project.company}
-                    </p>
-                    <p className="text-xs text-secondary/40 mt-0.5">
-                      {project.period}
-                    </p>
-                  </div>
+                  )}
                 </div>
                 <div className="p-6">
-                  <h3 className="font-heading font-bold text-xl text-primary mb-2">
+                  <h3 className="font-heading font-bold text-xl text-primary mb-1">
                     {project.title}
                   </h3>
+                  <p className="text-xs text-secondary/60 mb-2">
+                    {project.period}
+                  </p>
                   <p className="text-sm text-secondary leading-relaxed mb-3">
                     {project.description}
                   </p>

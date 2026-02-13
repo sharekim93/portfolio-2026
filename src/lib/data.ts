@@ -9,6 +9,7 @@ export interface Project {
   featured?: boolean;
   label?: string;
   gradient: string;
+  image?: string;
 }
 
 export interface Experience {
@@ -56,6 +57,7 @@ export const projects: Project[] = [
     featured: true,
     label: "최신 프로젝트",
     gradient: "from-accent/10 to-accent/5",
+    image: "/projects/fap-ansible-dashboard.png",
   },
   {
     title: "파트너스용 웹앱 개발",
